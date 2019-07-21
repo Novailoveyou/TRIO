@@ -1,0 +1,1077 @@
+<!-- Добавить Каталог, Цены -->
+<!--1 точка света = 300 руб, 370руб 1 кв метр, за любой цвет кроме белого 270руб 1 кв метр-->
+<!--Калькулятор. Добавить колличество комнат. Local storage. Кнопка посчитать ещё одну комнату. -->
+<!--Карниз потолочный + 300 руб.-->
+<!--Кослим, Кряж, Кошелев, Всё метро, Красный Кряжок районы самары карты-->
+<!-- <option value="7">Эксклюзивный</option> 800rub m2 , 1600rub m2 photo
+                  <option value="8">Фотопотолок</option> -->
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <link rel="canonical" href="https://potolki-trio.ru"/>
+          
+      <meta charset="UTF-8">
+      <meta name="description" content="Качественные, быстрые и доступные Натяжные Потолки ТРИО в городе Самара">
+      <meta name="keywords" content="Натяжной потолок,ТРИО,Натяжной,потолок, натяжные потолки, натяжные, потолки, ТРИО, Самара, город Самара">
+      <meta name="author" content="Nova i love you">
+        
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/materialize.min.css"
+      media="screen,projection"
+    />
+    <link type="text/css" rel="stylesheet" href="css/main.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="theme-color" content="#2196F3">
+    <link rel="icon" href="img/favicon-trio.ico" />
+    
+    <link rel="manifest" href="/manifest.json">
+    
+    <title>ТРИО | Натяжные Потолки в Самаре</title>
+    
+    <style>
+      #CalculatorLoader, #CalculatorResults{
+        display:none;
+      }
+    </style>
+  </head>
+
+  <body id="home" class="scrollspy">
+    
+    <div class="main-container">
+    <!-- Fixed action button -->
+      <div class="fixed-action-btn">
+        <a id="menu" class="btn btn-floating btn-large blue" onclick="$('.tap-target').tapTarget('open')">
+          <i class="material-icons">call</i>
+        </a>
+      </div>
+  
+      <div class="tap-target-wrapper">
+        <div class="tap-target blue" data-activates="menu">
+          <div class="tap-target-content white-text">
+            <h5><a href="tel:+7-927-777-7777" class="white-text">Нажмите, чтобы нам позвонить!</a></h5>
+            <p class="white-text"><a href="tel:+7-937-795-2715" class="white-text"> +7-937-795-2715</a></p>
+          </div>
+        </div>
+        <div class="tap-target-wave">
+          <a class="btn btn-floating btn-large blue tap-target-origin">
+            <i class="material-icons">close</i>
+          </a>
+        </div>
+      </div>
+
+    <header class="main-header">
+      <div class="primary-overlay">
+        <div class="navbar-fixed">
+          <nav class="transparent">
+            <div class="container">
+              <div class="nav-wrapper">
+                <a href="#home" class="brand-logo"><i class="material-icons medium left" aria-label="Главная">build</i>ТРИО</a>
+                <a href="#" data-activates="mobile-nav" class="button-collapse" aria-label="Мобильное меню">
+                  <i class="material-icons">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                  <li>
+                    <a href="#calculator" aria-label="Калькулятор">Калькулятор</a>
+                  </li>
+                  <li>
+                    <a href="#special-offers" aria-label="Акции">Акции</a>
+                  </li>
+                  <li>
+                    <a href="#testimonials" aria-label="Отзывы">Отзывы</a>
+                  </li>
+                  <li>
+                    <a href="#order-modal" class="btn blue waves-effect waves-light modal-trigger" aria-label="Заказать">Заказать</a>
+                  </li>
+                  <!-- <li>
+                    +7-999-999-99-99
+                  </li> -->
+                  <li>
+                    <a href="https://vk.com/potolki_trio" target="_blank" rel="noopener" aria-label="Наша Группа ВК">
+                      <i class="fab fa-vk fa-lg"></i>
+                    </a>
+                  </li>
+                  <!-- <li>
+                    <a href="https://ok.ru/" target="_blank" rel="noopener" aria-label="Наша Группа в Одноклассники">
+                      <i class="fab fa-odnoklassniki-square fa-lg"></i>
+                    </a>
+                  </li> -->
+                  <li>
+                    <a href="https://www.instagram.com/trionatiazhnyepotolki" target="_blank" rel="noopener" aria-label="Наша Группа в Инстаграмм">
+                      <i class="fab fa-instagram fa-lg"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <!-- Side nav -->
+        <ul class="side-nav blue-grey darken-3" id="mobile-nav">
+          <li>
+              <h4 class="blue-grey-darken-3 white-text center"><i class="material-icons mr-2">build</i>ТРИО</h4> <!--format_paint-->
+          </li>
+          <li>
+            <a href="#calculator" class="white-text" aria-label="Калькулятор">Калькулятор</a>
+          </li>
+          <li>
+            <a href="#special-offers" class="white-text" aria-label="Акции">Акции</a>
+          </li>
+          <li>
+            <a href="#testimonials" class="white-text" aria-label="Отзывы">Отзывы</a>
+          </li>
+          <li>
+            <div class="divider">
+
+            </div>
+          </li>
+          <li>
+              <a href="tel:+7-937-795-2715" class="white-text" aria-label="Позвонить нам"> <i class="material-icons white-text">call</i>+7-937-795-2715</a>
+            </li>
+          <li>
+            <a href="https://vk.com/potolki_trio" target="_blank" rel="noopener" class="white-text" aria-label="Наша Группа ВК"><i class="fab fa-vk fa-lg white-text"></i>Вконтакте</a>
+          </li>
+          <!-- <li>
+              <a href="https://ok.ru" target="_blank" rel="noopener" class="white-text" aria-label="Наша Группа в Одноклассники"><i class="fab fa-odnoklassniki-square fa-lg white-text"></i>Одноклассники</a>
+            </li> -->
+            <li>
+                <a href="https://instagram.com/trionatiazhnyepotolki" target="_blank" rel="noopener" class="white-text" aria-label="Наша Группа в Инстаграмм"><i class="fab fa-instagram fa-lg white-text"></i>Инстаграм</a>
+              </li>
+        </ul>
+        <!-- Showcase -->
+        <div class="showcase container">
+          <div class="row">
+            <div class="col s12 main-text">
+              <h5>Ответьте на 6 вопросов сейчас и...</h5>
+              <h1>Получите Скидку на натяжной потолок</h1>
+              <p class="flow-text">
+                Качественный, быстрый и доступный натяжной потолок? Это только ТРИО!
+              </p>
+              <br />
+              <a href="#calculator" class="btn btn-large blue waves-effect waves-light mr-2 mt-2" aria-label="Получить скидку"
+                >Получить скидку сейчас</a
+              >
+              <a href="#special-offers" class="btn btn-large white black-text mt-2" aria-label="Узнать больше об Акциях"
+                >Узнать больше</a
+              >
+              
+              <a href="#section_boxes" class="white-text" aria-label="Листать страницу ниже">
+                <i class="material-icons medius scroll-icon"
+                  >arrow_drop_down_circle</i
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Boxes bug: On Media size at some resolutions layout brakes -->
+    <!-- Section: Boxes -->
+    <section class="section-boxes center blue-grey darken-2 scrollspy" id="section_boxes">
+      <div class="row">
+        <div class="col s12 m6 l3 blue white-text box">
+          <i class="material-icons medium">thumb_up</i>
+          <h4>Гарантия работ 10 Лет</h4>
+          <p>От мастеров своего дела
+          </p>
+        </div>
+        <div class="col s12 m6 l3 purple white-text box">
+          <i class="material-icons medium">insert_emoticon</i>
+          <!-- <h4>Контроль Качества</h4> -->
+          <h4>Бесплатный Замер</h4>
+          <p>
+            В удобное для вас время
+          </p>
+        </div>
+        <div class="col s12 m6 l3 teal white-text box">
+          <i class="material-icons medium">timer</i>
+          <!-- <h4>Безопасное Оборудование</h4> -->
+          <h4>Установка за 1-2 дня</h4>
+          <p>
+            Без потери качества
+          </p>
+        </div>
+        <div class="col s12 m6 l3 amber darken-4 white-text box">
+          <i class="material-icons medium">security</i>
+          <!-- <h4>Доступные Цены</h4> -->
+          <h4>Официальный договор</h4>
+          <p>
+            Простой и понятный
+          </p>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+    <!-- Section: Question -->
+    <section id="question" class="section section-question white center scrollspy">
+      <h3>Есть Вопросы? Задайте Сейчас!</h3>
+      <h4>Получите бесплатную консультацию</h4>
+      <a href="#question-modal" class="btn blue waves-effect waves-light btn-large modal-trigger mt-2 mb-2" aria-label="Задать вопроос">Задать Вопрос</a>
+    </section>
+    <div class="divider"></div>
+
+    <!-- Section: Feedback -->
+  <section id="testimonials" class="section section-testimonial grey lighten-3 center scrollspy">
+      <div class="container">
+          <h3>Узнайте Что Наши Клиенты Говорят О Нас</h3>
+          <!-- <div class="row">
+            <div class="col s12">
+                <div class="video-container z-depth-4">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/DQwYXDeCbrE" title="Видео отзыв" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+            </div>
+          </div> -->
+        <div class="row">
+          <div class="col s12">
+            <div class="carousel carousel-slider center z-depth-5">
+              <div class="carousel-item red white-text z-depth-5" href="#one!">
+                <h2>Спасибо!</h2>
+                <p class="flow-text">"Уже дважды обратился в вашу компанию по установке натяжных потолков. При выборе компании я чётко знал
+                куда обращаться, так как ваши специалисты уже установили мне натяжной потолок
+                (фото на сайте). Сотрудники ТРИО прибыли в удобное для меня время, работу выполнили быстро, в общении были вежливы."
+                  <p>
+                    <em>- Вячеслав Королев</em>
+                  </p>
+                </p>
+                <div class="carousel-fixed-item center">
+                  <a href="https://vk.com/potolki_trio" target="_blank" rel="noopener" class="btn black white-text waves-effect waves-light" aria-label="Больше отзывов">Больше Отзывов</a>
+                </div>
+              </div>
+              <div class="carousel-item amber black-text z-depth-5" href="#two!">
+                <h2>Приятно удивлён</h2>
+                <p class="flow-text">"Обычно я не пишу отзывы, но работа мастеров из фирмы ТРИО приятно удивила.
+                Потолок натянули качественно и быстро. Спасибо ребятам. Все бы так работали!"
+                  <p>
+                    <em>- Николай Устинов</em>
+                  </p>
+                </p>
+                <div class="carousel-fixed-item center">
+                    <a href="https://vk.com/potolki_trio" target="_blank" rel="noopener" class="btn black white-text waves-effect waves-light" aria-label="Больше отзывов">Больше Отзывов</a>
+                </div>
+              </div>
+              <div class="carousel-item green white-text z-depth-5" href="#three!">
+                <h2>То, что я хотела!</h2>
+                <p class="flow-text">Решила установить матовый натяжной потолок на кухне.
+                Позвонила в вашу фирму натяжных потолков и в тот же день приехали специалисты, сделали замер.
+                Понравилось много вариантов расположения освещения на потолке, выбрала наиболее подходящий.
+                Специалисты всё качественно установили за два часа! Благодарна за быстрое и высококачественное обслуживание."
+                  <p>
+                    <em>- Анастасия Романова</em>
+                  </p>
+                </p>
+                <div class="carousel-fixed-item center">
+                    <a href="https://vk.com/potolki_trio" target="_blank" rel="noopener" class="btn black white-text waves-effect waves-light" aria-label="Больше отзывов">Больше Отзывов</a>
+                </div>
+              </div>
+              <div class="carousel-item blue white-text z-depth-5" href="#four!">
+                  <h2>Всё понравилось!</h2>
+                  <p class="flow-text">"ТРИО посоветовали нам знакомые. Два месяца назад они уже сделали себе потолки.
+                  Посмотрели как у них все сделано, нам понравилось и мы решили тоже заказать.
+                  Сделали заказ на сайте, нам перезвонили, договорились о времени. В назначенное время приехал замерщик, все показал, все объяснил.
+                  Жена подобрала цвет и фактуру полотна, которая подошла нашему интерьеру. Работу выполнили быстро и качественно. Нам все понравилось!"
+                    <p>
+                      <em>- Игорь Васеленков</em>
+                    </p>
+                  </p>
+                  <div class="carousel-fixed-item center">
+                      <a href="https://vk.com/potolki_trio" target="_blank" rel="noopener" class="btn black white-text waves-effect waves-light" aria-label="Больше отзывов">Больше Отзывов</a>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+    <!-- Section: How we work -->
+  <section class="section section-icons center blue white-text">
+      <div class="container">
+        <h3>Натяжной потолок с ТРИО это легко! Всего 4 этапа!</h3>
+        <div class="row">
+          <div class="col s12 m6 l3">
+            <div class="card grey lighten-4 black-text z-depth-4">
+                <div class="card-content">
+                <i class="material-icons medium blue-text">call</i>
+              <h5 class="grey-text text-darken-4">Заявка</h5>
+            </div>
+            <div class="card-action">
+                <p class="black-text">Вы оставляете заявку на сайте или по телефону. Наш менеджер проконсультирует Вас по всем вопросам и даст рекомендации.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+              <div class="card grey lighten-4 black-text z-depth-4">
+                  <div class="card-content">
+                  <i class="material-icons medium purple-text">create</i>
+                <h5 class="grey-text text-darken-4">Замер</h5>
+              </div>
+              <div class="card-action">
+                  <p class="black-text">В назначенное время бесплатно приезжает мастер технолог, снимает все необходимые замеры и расчитывает стоимость.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6 l3">
+                <div class="card grey lighten-4 black-text z-depth-4">
+                    <div class="card-content">
+                        <i class="material-icons medium teal-text">verified_user</i>
+                  <h5 class="grey-text text-darken-4">Договор</h5>
+                </div>
+                <div class="card-action">
+                    <p class="black-text">Утверждение цены, согласование спецификации и подписание договора.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col s12 m6 l3">
+                  <div class="card grey lighten-4 black-text z-depth-4">
+                      <div class="card-content">
+                          <i class="material-icons medium amber-text">thumb_up_alt</i>
+                    <h5 class="grey-text text-darken-4">Монтаж</h5>
+                  </div>
+                  <div class="card-action">
+                      <p class="black-text">Чистый монтаж в минимальный срок. Все бригады снабжены професиональным и безопасным оборудованием</p>
+                    </div>
+                  </div>
+                </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+    <!-- Section: Gallery -->
+    <section id="gallery" class="section section-gallery black-text center scrollspy">
+      <div class="container-fluid">
+        <h3 class="center">
+          <span class="blue-text">Галерея </span> Работ
+        </h3>
+        <div class="row">
+        <div class="col s12">
+        <div class="slider">
+            <ul class="slides">
+                <li>
+                    <img class="responsive-img" src="img/result11.jpg" alt="Натяжной потолок ТРИО"/> <!-- webp -->
+                </li>
+                <li>
+                    <img class="responsive-img" src="img/result17.jpg" alt="Натяжной потолок ТРИО"/>
+                </li>
+                <li>
+                    <img class="responsive-img" src="img/result16.jpg" alt="Натяжной потолок ТРИО"/>
+                </li>
+                <li>
+                    <img class="responsive-img" src="img/result18.jpg" alt="Натяжной потолок ТРИО"/>
+                </li>
+                <li>
+                    <img class="responsive-img" src="img/result20.jpg" alt="Натяжной потолок ТРИО"/>
+                </li>
+                <li>
+                    <img class="responsive-img" src="img/result23.jpg" alt="Натяжной потолок ТРИО"/>
+                </li>
+                <li>
+                    <img class="responsive-img" src="img/result22.jpg" alt="Натяжной потолок ТРИО"/>
+                </li>
+            </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+
+     <!-- Section: Features -->
+  <section class="section section-features grey lighten-3">
+      <div class="container">
+        <h3 class="center">Преимущества натяжных потолков</h3>
+        <br>
+        <br>
+        <!-- Row 1 -->
+        <div class="row">
+          <div class="col s12 m4">
+            <h5>
+              <i class="material-icons">timelapse</i> Скорость Монтажа
+            </h5>
+            <p>В среднем монтаж потолка "под ключ" в квартире размером 60 м2 занимает всего один день, при этом качество работ остается высоким</p>
+          </div>
+          <div class="col s12 m4">
+            <h5>
+              <i class="material-icons">sentiment_satisfied_alt</i> Возможность скрыть дефекты и коммуникации
+            </h5>
+            <p>Натяжные конструкции скроют недостатки основного потолка, электропроводку, дополнительные тепло- и шумоизоляционные слои. </p>
+          </div>
+          <div class="col s12 m4">
+            <h5>
+              <i class="material-icons">security</i> Спасение от Затопления
+            </h5>
+            <p>ПВХ натяжной потолок способен выдержать от 60 до 120 л воды при заливе. Это спасет Вашу технику и мебель</p>
+          </div>
+        </div>
+  
+        <!-- Row 2 -->
+        <div class="row">
+          <div class="col s12 m4">
+            <h5>
+              <i class="material-icons">favorite_border</i>Декор Помещения
+            </h5>
+            <p>Благодаря большому спектру цветов, фактур и форм, можно сделать Вашу квартиру или помещение практически в любом стиле</p>
+          </div>
+          <div class="col s12 m4">
+            <h5>
+              <i class="material-icons">star_border</i> Долговечность
+            </h5>
+            <p>Натяжные потолки имеют срок службы более 15 лет. Они не способны гнить, трескаться, осыпаться. Также легко эксплуатируются</p>
+          </div>
+          <div class="col s12 m4">
+            <h5>
+              <i class="material-icons">360</i> Универсальность
+            </h5>
+            <p>Благодаря простоте и своим характеристикам, натяжные потолки подходят практически под любой вид помещения</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+    
+    <!-- Section: Calculator -->
+     <section
+     id="calculator"
+     class="section section-calculator white lighten-3 center scrollspy"
+   >
+     <div class="container">
+       <h3>Рассчитайте примерную стоимость работ</h3>
+       <h4>И получите скидку 10%</h4>
+     <div class="row">
+       <div class="col s12">
+           <!-- <iframe src="https://jscalc.io/embed/p5wHgckHq5ZTGoYn" width="100%" height="560" frameborder="0" marginheight="0" marginwidth="0" title="Калькулятор"></iframe> -->
+         <form action="https://formspree.io/contact@potolki-trio.ru" method="POST" id="formCalculator">
+           <p><label for="roomSize">Площадь вашей комнаты (m2)</label></p>
+           <p class="range-field">
+             <input type="range" id="roomSize" min="5" max="120" value="15" name="Площадь комнаты"/>
+           </p>
+         
+             <label class="left">Колличество Точек Света</label>
+              <select id="lightPoints" class="browser-default" name="Колличество Точек Света">
+                <option value="0" disabled selected>Выберите...</option>
+                <option value="300">1</option>
+                <option value="600">2</option>
+                <option value="900">3</option>
+                <option value="1200">4</option>
+                <option value="1500">5</option>
+                <option value="1800">6</option>
+                <option value="2100">6+</option>
+              </select>
+              
+              <label class="left mt-2">Есть ли трубы входящие в потолок? Если да, то сколько?</label>
+              <select id="ceilingHoles" class="browser-default" name="Колличество Труб входящих в потолок">
+                <option value="0" disabled selected>Выберите...</option>
+                <option value="1">Нет</option>
+                <option value="300">1</option>
+                <option value="600">2</option>
+                <option value="900">3</option>
+                <option value="1200">4</option>
+                <option value="1500">5</option>
+                <option value="1800">6+</option>
+                <option value="2100">6+</option>
+              </select>
+          
+              <label class="left mt-2">Какой будет карниз для штор?</label>
+              <select id="curtainRail" class="browser-default" name="Карниз для штор">
+                <option value="0" disabled selected>Выберите...</option>
+                <option value="2">Настенный</option>
+                <option value="300">Потолочный</option>
+                <option value="1">Нет Карниза</option>
+              </select>
+            
+                <label class="left mt-2">Тип Потолка?</label>
+                <select id="ceilingType" class="browser-default" name="Тип потолка">
+                  <option value="269" disabled selected>Выберите...</option>
+                  <option value="270">Матовый</option>
+                  <option value="271">Глянцевый</option>
+                  <option value="272">Сатиновый</option>
+                  <option value="800">Эксклюзивный</option>
+                  <option value="1600">Фотопотолок</option>
+                </select>
+              
+              <p class="input_text_main_color">Цветной потолок?</p>
+             <p>
+                 <input type="radio" name="color_ceiling_input" id="colorCeilingFalse" value="0" checked />
+               <label for="colorCeilingFalse"><span class="black-text">Нет</span></label>
+             </p>
+             <p>
+                 <input type="radio" name="color_ceiling_input" id="colorCeilingTrue" value="100"/>
+               <label for="colorCeilingTrue"><span class="black-text">Да</span></label>
+             </p>
+             
+              <div class="input-field mt-2">
+                 <input id="clientPhonoNubmer" type="tel" name="Номер Телефона" class="validate" required>
+                 <label for="clientPhonoNubmer">Ваш Номер Телефона</label>
+             </div>
+             <div id="CalculatorLoader">
+              <img src="img/loading.gif" alt="loading" />
+            </div>
+             <div id="CalculatorResults">
+                 <div class=input-field>
+                 <input disabled id="calculatorResultsNoDiscount" type="number" class="validate" name="Сумма без скидки">
+                 <label for="calculatorResultsNoDiscount" class="black-text">Сумма без скидки: <span id="calculatedPrice"></span></label>
+             </div>
+            <div class=input-field>
+                 <input disabled id="calculatorResultsDiscount" type="number" class="validate" name="Сумма со скидкой">
+                 <label for="calculatorResultsDiscount" class="black-text">Сумма со скидкой: <span id="calculatedPriceDiscount"></span></label>
+             </div>
+             </div>
+                <input type="submit" class="btn blue waves-effect waves-light btn-large mt-2" value="Заказать со скидкой"/>
+                <!-- <input type="submit" class="btn blue waves-effect waves-light btn-large mt-2" aria-label="Посчитать ещё одну комнату" value="Посчитать ещё одну комнату"/> -->
+                </form>
+       </div>
+     </div>
+    </div>
+   </section>
+   <div class="divider"></div>
+    
+    <!-- Section: About -->
+    <section
+      id="about"
+      class="section section-about center scrollspy grey lighten-3"
+    >
+      <div class="container">
+        <h3>Узнайте Больше О Нас</h3>
+        <p class="flow-text">
+          ТРИО это качественные, быстрые и доступные натяжные потолки в Самаре.
+          Наша задача - преобразить дома и квартиры долговечным, чистым и современным решением.
+          Мы рады служить Вам, создавая уют и безопасность!
+        </p>
+        <div class="row">
+          <div class="col s12 m6">
+            <img
+              src="img/people.jpg"
+              alt="Staff"
+              class="responsive-img circle"
+            />
+          </div>
+          <div class="col s12 m5 offset-m1">
+            <br />
+            <ul class="collection with-header z-depth-4">
+              <li class="collection-header">
+                <h5>Сервисы</h5>
+              </li>
+              <li class="collection-item">
+                <i class="material-icons left">check</i> Гарантия работ 10 Лет
+              </li>
+              <li class="collection-item">
+                <i class="material-icons left">check</i> Бесплатный Замер и Выезд
+              </li>
+              <li class="collection-item">
+                <i class="material-icons left">check</i> Установка за 1-2 дня
+              </li>
+              <li class="collection-item">
+                <i class="material-icons left">check</i> Большой выбор фактур и цветов
+              </li>
+              <li class="collection-item">
+                  <i class="material-icons left">check</i> Официальный договор
+                </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+    
+    <!-- Section: Special Offers -->
+    <section id="special-offers" class="section section-s-offers center scrollspy">
+        <div class="container">
+            <h3>Специальные предложения</h3>
+            <div id="special-offer-limited-div" class="row z-depth-4">
+                <div class="col s12 m6">
+                    <div class="mt-2" id="special-offer-timer"></div>
+                    <p class="hide-on-small-only">До конца акции осталось</p>
+                </div>
+                <div class="col s12 m6">
+                    <p class="flow-text">Закажите 2 комнаты и получите 3 в подарок</p>
+                    <a class="btn blue waves-effect waves-light mb-4 modal-trigger" href="#order-modal-special-offer" aria-label="Получить подарок">Получить Подарок</a>
+                </div>
+            </div>
+            <div class="row z-depth-4">
+                <div class="col s12 m6">
+                    <span class="special-offer-icon-style"><i class="fas fa-infinity mt-2"></i></span>
+                    <p class="hide-on-small-only">До конца акции осталось</p>
+                </div>
+                <div class="col s12 m6">
+                    <p class="flow-text">Рассчитайте стоимость на сайте и получите 10% скидку</p>
+                    <a class="btn blue waves-effect waves-light mb-4" href="#calculator" aria-label="Получить скидку">Получить скидку</a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <div class="divider"></div>
+
+     <!-- Section: Follow -->
+  <section class="section section-follow blue darken-2 white-text center">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <h4>Следуйте за ТРИО</h4>
+          <p>Следите за нами в социальных сетях для специальных предложений</p>
+          <a href="https://vk.com/potolki_trio" target="_blank" rel="noopener" class="white-text" aria-label="Наша Группа ВКонтакте">
+            <i class="fab fa-vk fa-4x"></i>
+          </a>
+          <!-- <a href="https://ok.ru/" target="_blank" rel="noopener" class="white-text" aria-label="Наша Группа в Одноклассники">
+            <i class="fab fa-odnoklassniki-square fa-4x"></i>
+          </a> -->
+          <a href="https://www.instagram.com/trionatiazhnyepotolki" target="_blank" rel="noopener" class="white-text" aria-label="Наша Группа в Инстаграмм">
+            <i class="fab fa-instagram fa-4x"></i>
+          </a>
+          <!-- <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="white-text" aria-label="Наша Группа в Фейсбук">
+            <i class="fab fa-facebook fa-4x"></i>
+          </a> -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="divider"></div>
+   
+   <!-- Sectoion: Map -->
+    <section
+      id="map"
+      class="section section-about center scrollspy"
+    >
+      <div class="container">
+        <h3>Мы работаем в радиусе <strong>100км</strong> вокруг Самары</h3>
+        <p class="flow-text">Пожалуйста, проверьте свой адрес</p>
+        <div class="row">
+          <div class="col s12">
+            <div id="yandex-map">
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Acda3dd46b8f263dbc92ab367214ec64d3958b399ef78b5181e08213cd9892aa5&amp;source=constructor" title="Яндекс Карты" width="100%" height="400" frameborder="0"></iframe></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+    <!-- Footer -->
+    <footer class="page-footer blue-grey darken-1">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5>ТРИО</h5>
+            <p>Натяжные Потолки в Самаре</p>
+            <p><a href="tel:+7-937-795-2715" class="white-text" aria-label="Позвонить нам"> +7-937-795-2715</a></p>
+            
+                <ul>
+                    <li>
+            <a href="https://vk.com/potolki_trio" target="_blank" rel="noopener" class="white-text" aria-label="Наша Группа Вконтакте"><i class="fab fa-vk fa-lg white-text"></i> Вконтакте</a>
+          </li>
+          <!-- <li class="mt-2">
+              <a href="https://ok.ru" target="_blank" rel="noopener" class="white-text" aria-label="Наша Группа в Одноклассники"><i class="fab fa-odnoklassniki-square fa-lg white-text"></i> Одноклассники</a>
+            </li> -->
+            <li class="mt-2">
+                <a href="https://instagram.com/trionatiazhnyepotolki" target="_blank" rel="noopener" class="white-text" aria-label="Наша Группа в Инстаграмм"><i class="fab fa-instagram fa-lg white-text"></i> Инстаграм</a>
+              </li>
+                </ul>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Полезные ссылки</h5>
+            <ul>
+              <li>
+                <a class="grey-text text-lighten-3" href="#home" aria-label="На главную">Получить скидку</a>
+              </li>
+              <li class="mt-2">
+                <a class="grey-text text-lighten-3" href="#question" aria-label="К Задать Вопрос"
+                  >Задать вопрос</a
+                >
+              </li>
+              <li class="mt-2">
+                <a class="grey-text text-lighten-3" href="#testimonials" aria-label="К Отзывам">Отзывы</a>
+              </li>
+              <li class="mt-2">
+                <a class="grey-text text-lighten-3" href="#gallery" aria-label="К Галереи">Галерея</a>
+              </li>
+              <li class="mt-2">
+                <a class="grey-text text-lighten-3" href="#calculator" aria-label="К Калькулятору">Рассчитать стоимость</a>
+              </li>
+              <li class="mt-2">
+                <a class="grey-text text-lighten-3" href="#special-offers" aria-label="К Акциям">Акции</a>
+              </li>
+              <li class="mt-2">
+                <a class="grey-text text-lighten-3" href="#map" aria-label="К Карте">Карта</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright blue-grey darken-4">
+        <div class="container">
+            <p>ТРИО © 2019</p>
+            <p>
+                Приложение создал <a href="https://vk.com/imnotthere3"
+                                    aria-label="Автор приложения"
+                                    class="grey-text text-lighten-3"
+                                    rel="noopener"
+                                    target="_blank"><span class="text-decoration-underline">Nova i love you</span>
+                                  </a>
+            </p>
+            <p>
+              <a rel="license noopener"
+                href="http://creativecommons.org/licenses/by/4.0/"
+                target="_blank"
+                aria-label="Лицензия">
+                  <img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />
+              </a>
+            </p>
+                <a class="grey-text text-lighten-4 right" href="#home" aria-label="Наверх">
+                <i class="material-icons left">keyboard_arrow_up</i> Вернуться
+            наверх
+          </a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+    <!-- MODALS -->
+
+    <!-- Question Modal -->
+    <div id="question-modal" class="modal">
+      <div class="modal-content">
+        <h4>Задайте Вопрос</h4>
+        <p>Оставьте свой контактный номер телефона и мы вам перезвоним, в удобное для вас время</p>
+          <p>Или получите бесплатную консультацию прямо сейчас, по номеру телефона<br/><strong><a href="tel:+7-937-795-2715" aria-label="Позвонить нам">+7-937-795-2715</a></strong></p>
+        <div class="row">
+            <form action="https://formspree.io/contact@potolki-trio.ru" method="POST" class="col s12">
+              <div class="row">
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">mode_edit</i>
+                      <textarea id="question-textarea" class="materialize-textarea" data-length="280" name="Вопрос"></textarea>
+                      <label for="question-textarea">Ваш Вопрос</label>
+                    </div>
+                  </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="question_name" type="text" class="validate" name="Имя" required>
+                  <label for="question_name">Ваше Имя</label>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="input-field col s12">
+                      <i class="material-icons prefix">phone</i>
+                      <input id="question-phone" type="tel" class="validate" name="Номер Телефона" required>
+                      <label for="question-phone">Ваш Номер Телефона</label>
+                    </div>
+              </div>
+                  <div class="row">
+                      <div class="input-field col s12">
+                        <i class="material-icons prefix">access_time</i>
+                        <input id="question_call_time" type="text" class="validate" name="Время для звонка">
+                        <label for="question_call_time">В какое время вам перезвонить?</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                          <input class="btn blue waves-effect waves-light" type="submit" value="Задать Вопрос">
+                        </div>
+                      </div>
+            </form>
+          </div>
+      </div>
+    </div>
+
+    <!-- Order Modal -->
+    <div id="order-modal" class="modal">
+        <div class="modal-content">
+          <h4>Закажите бесплатный замер</h4>
+          <p>Оставьте свой контактный номер телефона и мы вам перезвоним, в удобное для вас время</p>
+          <p>Или закажите <strong>бесплатный замер</strong>, в удобное для вас время, прямо сейчас по номеру телефона<br/><strong><a href="tel:+7-937-795-2715" aria-label="Позвонить нам">+7-937-795-2715</a></strong></p>
+          <div class="row">
+              <form action="https://formspree.io/contact@potolki-trio.ru" method="POST" class="col s12">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="order_name" type="text" class="validate" name="Имя" required>
+                    <label for="order_name">Ваше Имя</label>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">phone</i>
+                        <input id="order-phone" type="tel" class="validate" name="Номер Телефона" required>
+                        <label for="order-phone">Ваш Номер Телефона</label>
+                      </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">access_time</i>
+                      <input id="order_call_time" type="text" class="validate" name="Время для звонка">
+                      <label for="order_call_time">В какое время вам перезвонить?</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="input-field col s12">
+                        <input class="btn blue waves-effect waves-light" type="submit" value="Заказать звонок">
+                      </div>
+                    </div>
+              </form>
+            </div>
+        </div>
+      </div>
+      
+      <!-- Order Modal Spepcial offer -->
+    <div id="order-modal-special-offer" class="modal">
+        <div class="modal-content">
+          <h4>Закажите бесплатный замер</h4>
+          <p>Оставьте свой контактный номер телефона и мы вам перезвоним, в удобное для вас время</p>
+          <p>Или закажите <strong>бесплатный замер</strong>, в удобное для вас время, прямо сейчас по номеру телефона<br/><strong><a href="tel:+7-937-795-2715" aria-label="Позвонить нам">+7-937-795-2715</a></strong></p>
+          <div class="row">
+              <form action="https://formspree.io/contact@potolki-trio.ru" method="POST" class="col s12">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="order_name" type="text" class="validate" name="Имя (Акция 2 заказ 2 комнат, 3 в подарок)" required>
+                    <label for="order_name">Ваше Имя</label>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">phone</i>
+                        <input id="order-phone" type="tel" class="validate" name="Номер Телефона" required>
+                        <label for="order-phone">Ваш Номер Телефона</label>
+                      </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">access_time</i>
+                      <input id="order_call_time" type="text" class="validate" name="Время для звонка">
+                      <label for="order_call_time">В какое время вам перезвонить?</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="input-field col s12">
+                        <input class="btn blue waves-effect waves-light" type="submit" value="Заказать Звонок и получить подарок">
+                      </div>
+                    </div>
+              </form>
+            </div>
+        </div>
+      </div>
+
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+    ></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    
+    <!-- off-screen image load -->
+    <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+    
+    
+    <script>
+    
+        if('serviceWorker' in navigator) {
+  navigator.serviceWorker
+           .register('sw.js')
+           .then(function() { console.log("Service Worker Registered"); });
+}
+
+const observer = lozad();
+observer.observe();
+    /*
+      document.querySelector('.main-container').style.display = 'none';
+      document.body.classList.add('spinner');
+
+      // Mimic server req
+      setTimeout(()=> {
+        document.body.classList.remove('spinner');
+        document.querySelector('.main-container').style.display = 'block';
+        // Hardcode bug fix with carousel shrinks to 100px
+      document.querySelector('.carousel').style.height = "400px";
+      }, 4000); */
+
+      $(document).ready(function() {
+        // Init Sidenav
+        $('.button-collapse').sideNav({
+          menuWidth: 300, // default 300
+          edge: 'left',
+          closeOnClick: true,
+          draggable: true
+          // onOpen: function() {
+          //   console.log('Menu Open');
+          // },
+          // onClose: function() {
+          //   console.log('Menu Close');
+          // }
+        });
+
+        // Init Scrollspy
+        $('.scrollspy').scrollSpy();
+
+        // ScrollFire
+        const options = [
+          {
+            selector: '.main-text',
+            offset: 0,
+            callback: function(el) {
+              Materialize.fadeInImage($(el));
+            }
+          },
+          {
+            selector: '.navbar-fixed',
+            offset: 1500,
+            callback: function() {
+              $('nav').removeClass('transparent');
+              $('nav').addClass('blue-grey darken-3');
+            }
+          }
+        ];
+
+        Materialize.scrollFire(options);
+
+        // Carousel slider
+        $('.carousel.carousel-slider').carousel({
+          fullWidth: true,
+          indicators: true
+          });
+
+        // Carousel autoplay
+        autoplay();
+        function autoplay() {
+        $('.carousel').carousel('next');
+        setTimeout(autoplay, 4500);
+        }
+
+        // Init modal
+        $('.modal').modal();
+
+        // Init dynamic text area
+        $('textarea#question-textarea').characterCounter();
+
+        // Init Slider
+        $('.slider').slider({
+        //   indicators: false
+        height: 560
+        //   transition: 500
+        //   interval: 6000
+       });
+
+        // Init Paralax
+        $('.parallax').parallax();
+
+        // INIT SELECT LIST
+        $('select').material_select();
+        
+        // Calculator
+        document.getElementById('formCalculator').addEventListener('change', function(){
+           document.getElementById('CalculatorResults').style.display = 'none';
+           document.getElementById('CalculatorLoader').style.display = 'block';
+           
+           setTimeout(calculateResults, 1000);
+        });
+        
+        function calculateResults(){
+            const ROOM_SIZE_VALUE = document.getElementById('roomSize').value;
+            
+            const LIGHT_POINTS = document.getElementById('lightPoints');
+            const LIGHT_POINTS_VALUE = LIGHT_POINTS.options[LIGHT_POINTS.selectedIndex].value;
+            
+            const CEILING_HOLES = document.getElementById('ceilingHoles');
+            const CEILING_HOLES_VALUE = CEILING_HOLES.options[CEILING_HOLES.selectedIndex].value;
+            
+            const CURTAIN_RAIL = document.getElementById('curtainRail');
+            const CURTAIN_RAIL_VALUE = CURTAIN_RAIL.options[CURTAIN_RAIL.selectedIndex].value;
+            
+            const CEILING_TYPE = document.getElementById('ceilingType');
+            const CEILING_TYPE_VALUE = CEILING_TYPE.options[CEILING_TYPE.selectedIndex].value;
+            
+            const COLOR_CEILING_TRUE = document.getElementById('colorCeilingTrue');
+            const COLOR_CEILING_FALSE = document.getElementById('colorCeilingFalse');
+            let COLOR_CEILING_VALUE = 0;
+            if (COLOR_CEILING_TRUE.checked) {
+               COLOR_CEILING_VALUE = COLOR_CEILING_TRUE.value;
+            } else{
+                COLOR_CEILING_VALUE = COLOR_CEILING_FALSE.value;
+            }
+            const outputPriceUI = document.getElementById('calculatedPrice');
+            const outputDiscountPriceUI = document.getElementById('calculatedPriceDiscount');
+            
+            //console.log(ROOM_SIZE_VALUE);
+            //console.log(LIGHT_POINTS_VALUE);
+            //console.log(CEILING_HOLES_VALUE);
+            //console.log(CURTAIN_RAIL_VALUE);
+            //console.log(CEILING_TYPE_VALUE);
+            //console.log(COLOR_CEILING_VALUE);
+            
+            const outputPrice = ((ROOM_SIZE_VALUE*1) * (270+(CEILING_TYPE_VALUE-270)))+
+              (CEILING_HOLES_VALUE*1)+
+              (LIGHT_POINTS_VALUE*1)+
+              (CURTAIN_RAIL_VALUE*1)+
+              ((COLOR_CEILING_VALUE*1)*(ROOM_SIZE_VALUE*1));
+              
+            const outputPriceDiscount = outputPrice * 90/100;
+              
+           //   console.log(outputPrice.toFixed(0));
+            //  console.log(outputPriceDiscount.toFixed(0));
+            
+            outputPriceUI.innerHTML = outputPrice.toFixed(0);
+            outputDiscountPriceUI.innerHTML = outputPriceDiscount.toFixed(0);
+            
+            document.getElementById('CalculatorResults').style.display = 'block';
+            document.getElementById('CalculatorLoader').style.display = 'none';
+        };
+        
+         // special offers
+      // Set the date we're counting down to
+      // Terrible code down below, it works but still needs to be rewritten
+var countDownDate = new Date("Jul 15, 2019 05:15:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="special-offer-timer"
+  document.getElementById("special-offer-timer").innerHTML =
+  `<div>
+    <span class="days">${days}</span>
+    <div class="smalltext">Дней</div>
+  </div>
+  <div>
+    <span class="hours">${hours}</span>
+    <div class="smalltext">Часов</div>
+  </div>
+  <div>
+    <span class="minutes">${minutes}</span>
+    <div class="smalltext">Минут</div>
+  </div>
+  <div>
+    <span class="seconds">${seconds}</span>
+    <div class="smalltext">Секунд</div>
+  </div>`;
+
+  // If the count down is finished
+  if (distance < 0) {
+    countDownDate += (1000 * 60 * 60 * 24 * 2);
+    //document.getElementById("special-offer-limited-div").style.display = 'none';
+  }
+}, 1000);
+      });
+    </script>
+  </body>
+</html>
