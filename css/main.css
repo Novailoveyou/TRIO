@@ -1,0 +1,201 @@
+/* Spinner  */
+/*
+.spinner:before{
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 60px;
+  width: 60px;
+  margin-top: -30px;
+  margin-left: -30px;
+  border-radius: 50%;
+  border-top: 2px solid #2196F3;
+  border-right: 2px solid transparent;
+  animation: spinner 0.7s linear infinite;
+  z-index: 1001;
+}
+
+@keyframes spinner{
+  to{
+    transform: rotate(360deg);
+  }
+}
+*/
+
+.modal{
+  max-height: 90%;
+}
+
+.input_text_main_color{
+  color: #9e9e9e;
+}
+
+.text-decoration-underline{
+    text-decoration: underline;
+}
+
+.mr-2{
+  margin-right: .5em;
+}
+
+.mt-2{
+  margin-top: .5em;
+}
+
+.mb-2{
+  margin-bottom: .5em;
+}
+
+.mb-4{
+  margin-bottom: 1em;
+}
+
+.mt-5{
+  margin-top: 2em;
+}
+
+.remove-margin-top {
+  margin-top: 0;
+}
+
+.add-padding-top-med {
+  padding-top: 0.4em;
+}
+
+.primary-overlay {
+  background: rgb(63, 57, 77);
+  background: rgba(63, 57, 77, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.main-header {
+  background-color: #2196F3;
+  background-image: url(../img/showcase.jpg);
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  min-height: 800px;
+  color: #fff;
+  position: relative;
+}
+
+/* special offers */
+#special-offer-timer{
+  font-family: sans-serif;
+  color: #fff;
+  display: inline-block;
+  font-weight: 100;
+  text-align: center;
+  font-size: 30px;
+}
+
+#special-offer-timer > div{
+  padding: 10px;
+  border-radius: 3px;
+  background: #2196F3;
+  display: inline-block;
+}
+
+#special-offer-timer div > span{
+  padding: 15px;
+  border-radius: 3px;
+  background: #1976D2;
+  display: inline-block;
+}
+
+.smalltext{
+  padding-top: 5px;
+  font-size: 16px;
+}
+
+.special-offer-icon-style{
+    font-size: 4em;
+    color: #2196F3;
+}
+
+/* background image not appering on old android devices fix */
+@media only screen and (max-width: 767px) {
+  .main-header {
+    background-image: url(../img/showcase-mobile.jpg);
+  }
+  .main-header .showcase{
+    padding-top: 2em;
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  .main-header .showcase {
+      padding-top: 110px;
+    }
+}
+
+/* .gallery-carousel{
+    min-height: 560px;
+    max-height: 560px;
+    max-width: 1920px;
+    margin: 0 auto;
+} */
+
+.section-follow .fa-4x {
+  margin: 5px 10px;
+}
+
+.scroll-icon {
+  position: absolute;
+  bottom: 5%;
+  left: 47%;
+  opacity: 0.5;
+}
+
+.box {
+  padding: 40px 10px !important;
+}
+
+.box h4 {
+  padding-bottom: 30px;
+}
+
+.box {
+  flex: 1 !important;
+}
+
+.section-boxes .row {
+  margin-bottom: 0 !important;
+}
+
+.section-contact .card-panel {
+  z-index: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .main-header {
+    height: 50vh;
+  }
+}
+
+/* Can just do display: flex , flex: wrap and thats it, test it */
+@media (min-width: 994px) {
+  .section-boxes .row {
+    display: flex;
+    width: 100%;
+  }
+  .box {
+    flex: 1 !important;
+  }
+}
+
+/* Calculator */
+#calculatedPrice{
+text-decoration: line-through;
+}
